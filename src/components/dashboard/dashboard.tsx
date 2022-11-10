@@ -59,9 +59,9 @@ function Dashboard () {
       </div>
       </section>
       <div className="grid grid-cols-2 gap-5 m-6">
-        <div className="overflow-x-auto relative shadow-md sm:rounded-lg">
+        <div className="relative shadow-sm sm:rounded-lg">
           <p className="mb-3 p-2 font-serif text-md">Child Information</p>
-          <div>
+            <div className='overflow-y-auto h-80'>
             <table className="w-full text-sm text-left">
               <thead className="justify-between text-sm">
                 <tr className="bg-dark-purple">
@@ -179,12 +179,12 @@ function Dashboard () {
                 </tr>
               </tbody>
             </table>
-          </div>
+            </div>
         </div>
-        <div className="overflow-x-auto relative shadow-md sm:rounded-lg">
+        <div className="relative shadow-sm sm:rounded-lg">
           <p className="mb-3 p-2 font-serif text-md">Institute Information</p>
-          <div>
-            <table className="w-full text-sm text-left">
+            <div className='overflow-y-auto h-80'>
+            <table className="table-auto w-full text-sm text-left">
               <thead className="justify-between text-sm">
                 <tr className="bg-dark-purple">
                   <th className="py-3 px-6">
@@ -241,6 +241,40 @@ function Dashboard () {
                 <tr className="bg-white border-4 border-gray-200 hover:bg-gray-100">
                   <td>
                     <span className="text-center ml-2 font-semibold">
+                      Hospital 02
+                    </span>
+                  </td>
+                  <td className="py-4 px-6">
+                    <span>Adress hhkjhfjksdf dsfs dfs f</span>
+                  </td>
+                  <td className="py-4 px-6">
+                    <span>Mrs.Renuka Jayawardana</span>
+                  </td>
+
+                  <td className="py-4 px-6">
+                    <span>0779001099</span>
+                  </td>
+                </tr>
+                <tr className="bg-white border-4 border-gray-200 hover:bg-gray-100">
+                  <td>
+                    <span className="text-center ml-2 font-semibold">
+                      Hospital 02
+                    </span>
+                  </td>
+                  <td className="py-4 px-6">
+                    <span>Adress hhkjhfjksdf dsfs dfs f</span>
+                  </td>
+                  <td className="py-4 px-6">
+                    <span>Mrs.Renuka Jayawardana</span>
+                  </td>
+
+                  <td className="py-4 px-6">
+                    <span>0779001099</span>
+                  </td>
+                </tr>
+                <tr className="bg-white border-4 border-gray-200 hover:bg-gray-100">
+                  <td>
+                    <span className="text-center ml-2 font-semibold">
                       Hospital 03
                     </span>
                   </td>
@@ -257,7 +291,8 @@ function Dashboard () {
                 </tr>
               </tbody>
             </table>
-          </div>
+            </div>
+
         </div>
       </div>
       <div>

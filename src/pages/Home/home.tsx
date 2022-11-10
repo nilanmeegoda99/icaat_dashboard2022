@@ -18,10 +18,7 @@ import KnowledgeScreen from '../../components/knowledge_iq/knowledge'
 import AllreportScren from '../../components/all_reports/allreport'
 import MentalChronoScreen from '../../components/mental_chronometry/mentalChronometry'
 import ReasoningIq from '../../components/reasoning_iq/resoning'
-import ReactDOM from 'react-dom'
 import Modal from 'react-modal'
-import { Menu, Transition } from '@headlessui/react'
-import { ChevronDownIcon } from '@heroicons/react/20/solid'
 
 const customStyles = {
   content: {
