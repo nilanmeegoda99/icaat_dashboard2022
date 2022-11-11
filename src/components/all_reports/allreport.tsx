@@ -3,6 +3,7 @@ import { IChildFullData } from '../../childtypes'
 import ChildFullData from '../child_data_component/child_date_full_component'
 import { PaperClipIcon } from '@heroicons/react/20/solid'
 import AddCircleOutlinedIcon from '@mui/icons-material/AddCircleOutlined'
+import SendEmail from '../../comms/email_template'
 
 function AllreportScren () {
   return (
@@ -117,6 +118,9 @@ function AllreportScren () {
                       </div>
                       <div className="mx-4 flex">
                         <button type="submit" className="px-6 py-2 rounded bg-dark-purple hover:bg-blue-600 text-sky-100"><AddCircleOutlinedIcon /></button>
+                      </div>
+                      <div className="mx-4 flex">
+                        <button type="submit" className="px-6 py-2 rounded bg-dark-purple hover:bg-blue-600 text-sky-100"><SendEmail /></button>
                       </div>
                     </form>
                     </li>

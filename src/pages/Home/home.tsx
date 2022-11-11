@@ -19,6 +19,7 @@ import AllreportScren from '../../components/all_reports/allreport'
 import MentalChronoScreen from '../../components/mental_chronometry/mentalChronometry'
 import ReasoningIq from '../../components/reasoning_iq/resoning'
 import Modal from 'react-modal'
+import API from '../../services/api'
 
 const customStyles = {
   content: {
