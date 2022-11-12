@@ -21,7 +21,7 @@ function AllreportScren () {
       />
       <div className="mt-5">
         <div
-          style={{ height: '40rem' }}
+          style={{ height: '50vh' }}
           className="overflow-y-auto p-4 bg-white shadow sm:rounded-lg"
         >
           <div className="px-4 py-5 sm:px-6">

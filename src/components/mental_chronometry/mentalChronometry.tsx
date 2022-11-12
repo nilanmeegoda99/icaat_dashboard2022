@@ -18,7 +18,7 @@ function MentalChronoScreen () {
   <ChildData name={candidateData.name} institute={candidateData.institute} age={candidateData.age} guardian={candidateData.guardian} disorders={candidateData.disorders} residence={candidateData.residence} />
 
     <div className="mt-10 ">
-          <div className="overflow-y-auto p-4" style={{ height: '40rem' }}>
+          <div className="overflow-y-auto p-4" style={{ height: '50vh' }}>
             <div className="mt-10 relative bg-white p-4 rounded-3xl w-full my-4 shadow-xl">
               <div className=" text-white flex items-center absolute rounded-full py-4 px-4 shadow-xl bg-dark-purple left-4 -top-6">
                 Activity 01
