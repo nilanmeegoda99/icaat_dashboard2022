@@ -18,8 +18,6 @@ export const getAttentionSpanIQScores = async () => {
       scores = attentionSpanScores.filter((obj: { candidateID: string }) => {
         return obj.candidateID === childId
       })
-      console.log('AttentionSpan IQ scores', attentionSpanScores)
-      console.log('AttentionSpan IQ scores2', scores)
     })
     .catch((err) => {
       console.log(err.message)
