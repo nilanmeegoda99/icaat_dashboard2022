@@ -78,41 +78,50 @@ function AttentionScreen () {
                       <p className="text-xl font-semibold my-2">
                         Level no : {item.questionIndex}{' '}
                       </p>
-                      <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                      <div className="bg-white px-4 py-1 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                         <dt className="text-sm font-medium text-gray-500">
-                          Low attention level
+                          Low attention level - {item?.attentionLevelScore?.low_attention * 100}%
                         </dt>
                         <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
                           <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-20">
                             <div
-                              className="bg-blue04 h-2.5 rounded-full"
-                              style={{ width: `${item?.attentionLevelScore?.low_attention * 100}%` }}
+                              className="h-2.5 rounded-full"
+                              style={{
+                                width: `${item?.attentionLevelScore?.low_attention * 100}%`,
+                                backgroundColor: (item?.attentionLevelScore?.low_attention * 100) <= 35 ? 'red' : ((item?.attentionLevelScore?.low_attention * 100) > 35 && (item?.attentionLevelScore?.low_attention * 100) < 75) ? '#FFAA33' : 'green'
+                              }}
                             ></div>
                           </div>
                         </dd>
                       </div>
-                      <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                      <div className="bg-white px-4 py-1 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                         <dt className="text-sm font-medium text-gray-500">
-                        Mid attention level
+                        Mid attention level - {item?.attentionLevelScore?.mid_attention * 100}%
                         </dt>
                         <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
                           <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-20">
                             <div
-                              className="bg-blue04 h-2.5 rounded-full"
-                              style={{ width: `${item?.attentionLevelScore?.mid_attention * 100}%` }}
+                              className="h-2.5 rounded-full"
+                              style={{
+                                width: `${item?.attentionLevelScore?.mid_attention * 100}%`,
+                                backgroundColor: (item?.attentionLevelScore?.mid_attention * 100) <= 35 ? 'red' : ((item?.attentionLevelScore?.mid_attention * 100) > 35 && (item?.attentionLevelScore?.mid_attention * 100) < 75) ? '#FFAA33' : 'green'
+                              }}
                             ></div>
                           </div>
                         </dd>
                       </div>
-                      <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                      <div className="bg-white px-4 py-1 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                         <dt className="text-sm font-medium text-gray-500">
-                        High attention level
+                        High attention level - {item?.attentionLevelScore?.high_attention * 100}%
                         </dt>
                         <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
                           <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-20">
                             <div
                               className="bg-blue04 h-2.5 rounded-full"
-                              style={{ width: `${item?.attentionLevelScore?.high_attention * 100}%` }}
+                              style={{
+                                width: `${item?.attentionLevelScore?.high_attention * 100}%`,
+                                backgroundColor: (item?.attentionLevelScore?.high_attention * 100) <= 35 ? 'red' : ((item?.attentionLevelScore?.high_attention * 100) > 35 && (item?.attentionLevelScore?.high_attention * 100) < 75) ? '#FFAA33' : 'green'
+                              }}
                             ></div>
                           </div>
                         </dd>
@@ -143,49 +152,58 @@ function AttentionScreen () {
                 {analyticalattentionScores.map((item, key) => {
                   return (
                     <div>
-                      <p className="text-xl font-semibold my-2">
-                        Level no : {item.questionIndex}{' '}
-                      </p>
-                      <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                        <dt className="text-sm font-medium text-gray-500">
-                          Low attention level
-                        </dt>
-                        <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-                          <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-20">
-                            <div
-                              className="bg-blue04 h-2.5 rounded-full"
-                              style={{ width: `${item?.attentionLevelScore?.low_attention * 100}%` }}
-                            ></div>
-                          </div>
-                        </dd>
-                      </div>
-                      <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                        <dt className="text-sm font-medium text-gray-500">
-                        Mid attention level
-                        </dt>
-                        <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-                          <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-20">
-                            <div
-                              className="bg-blue04 h-2.5 rounded-full"
-                              style={{ width: `${item?.attentionLevelScore?.mid_attention * 100}%` }}
-                            ></div>
-                          </div>
-                        </dd>
-                      </div>
-                      <div className="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
-                        <dt className="text-sm font-medium text-gray-500">
-                        High attention level
-                        </dt>
-                        <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
-                          <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-20">
-                            <div
-                              className="bg-blue04 h-2.5 rounded-full"
-                              style={{ width: `${item?.attentionLevelScore?.high_attention * 100}%` }}
-                            ></div>
-                          </div>
-                        </dd>
-                      </div>
+                    <p className="text-xl font-semibold my-2">
+                      Level no : {item.questionIndex}{' '}
+                    </p>
+                    <div className="bg-white px-4 py-1 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                      <dt className="text-sm font-medium text-gray-500">
+                        Low attention level - {item?.attentionLevelScore?.low_attention * 100}%
+                      </dt>
+                      <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                        <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-20">
+                          <div
+                            className="h-2.5 rounded-full"
+                            style={{
+                              width: `${item?.attentionLevelScore?.low_attention * 100}%`,
+                              backgroundColor: (item?.attentionLevelScore?.low_attention * 100) <= 35 ? 'red' : ((item?.attentionLevelScore?.low_attention * 100) > 35 && (item?.attentionLevelScore?.low_attention * 100) < 75) ? '#FFAA33' : 'green'
+                            }}
+                          ></div>
+                        </div>
+                      </dd>
                     </div>
+                    <div className="bg-white px-4 py-1 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                      <dt className="text-sm font-medium text-gray-500">
+                      Mid attention level - {item?.attentionLevelScore?.mid_attention * 100}%
+                      </dt>
+                      <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                        <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-20">
+                          <div
+                            className="h-2.5 rounded-full"
+                            style={{
+                              width: `${item?.attentionLevelScore?.mid_attention * 100}%`,
+                              backgroundColor: (item?.attentionLevelScore?.mid_attention * 100) <= 35 ? 'red' : ((item?.attentionLevelScore?.mid_attention * 100) > 35 && (item?.attentionLevelScore?.mid_attention * 100) < 75) ? '#FFAA33' : 'green'
+                            }}
+                          ></div>
+                        </div>
+                      </dd>
+                    </div>
+                    <div className="bg-white px-4 py-1 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                      <dt className="text-sm font-medium text-gray-500">
+                      High attention level - {item?.attentionLevelScore?.high_attention * 100}%
+                      </dt>
+                      <dd className="mt-1 text-sm text-gray-900 sm:col-span-2 sm:mt-0">
+                        <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-20">
+                          <div
+                            className="bg-blue04 h-2.5 rounded-full"
+                            style={{
+                              width: `${item?.attentionLevelScore?.high_attention * 100}%`,
+                              backgroundColor: (item?.attentionLevelScore?.high_attention * 100) <= 35 ? 'red' : ((item?.attentionLevelScore?.high_attention * 100) > 35 && (item?.attentionLevelScore?.high_attention * 100) < 75) ? '#FFAA33' : 'green'
+                            }}
+                          ></div>
+                        </div>
+                      </dd>
+                    </div>
+                  </div>
                   )
                 })}
                 <div className="border-t-2"></div>
