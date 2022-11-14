@@ -1,6 +1,5 @@
 /* eslint-disable react/jsx-key */
 import React, { useEffect, useState } from 'react'
-import { IChildData } from '../../childtypes'
 import { getChild } from '../../services/get_child'
 import ChildData from '../child_data_component/child_data_component'
 import { getKnowledgeIQScores } from '../../services/get_knowledgeIQScores'
@@ -25,7 +24,6 @@ function KnowledgeScreen () {
     <div className="flex flex-col">
       <h2 className="mb-4 text-2xl font-bold">Knowledge IQ Evaluation</h2>
       {candidateData.length > 0 && (
-        // <p>Test {candidateData[0].firstName}</p>
         <ChildData
           firstName={candidateData[0].firstName}
           institute={candidateData[0].institute}
