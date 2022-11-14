@@ -20,6 +20,8 @@ import MentalChronoScreen from '../../components/mental_chronometry/mentalChrono
 import ReasoningIq from '../../components/reasoning_iq/resoning'
 import Modal from 'react-modal'
 import API from '../../services/api'
+import { getChildren } from '../../services/get_children'
+import { getInstitutes } from '../../services/get_institutes'
 
 const customStyles = {
   content: {
@@ -39,7 +41,11 @@ function Home () {
   const [open, setOpen] = React.useState(true)
   const [screenNo, setScreenNo] = React.useState(1)
   const [indexNo, setIndexNo] = React.useState(0)
-  const [selectedChild, setSelectedChild] = React.useState()
+  const [childrenData, setChildrenData] = useState<any[]>([])
+  const [filteredChildren, setFilteredChildren] = useState<any[]>([])
+  const [selectedChild, setSelectedChild] = React.useState('')
+  const [selectedInstitute, setSelectedInstitute] = React.useState('')
+  const [institutes, setInstitutes] = useState<any[]>([])
 
   const Menuss = [
     { title: 'Dashboard', src: InsertChartOutlinedTwoToneIcon },
@@ -50,6 +56,32 @@ function Home () {
     { title: 'All', src: BallotOutlinedIcon, gap: true }
   ]
 
+  useEffect(() => {
+    async function fetchData () {
+      setChildrenData(await getChildren())
+      setInstitutes(await getInstitutes())
+    }
+    void fetchData()
+  }, [])
+  useEffect(() => {
+    setFilteredChildren([])
+    setSelectedChild('')
+    if (selectedInstitute === null || selectedInstitute === undefined || selectedInstitute === '') {
+      return
+    }
+    void filterChildrenBasedOnInstitute()
+  }, [selectedInstitute])
+  useEffect(() => {
+    if (selectedChild === null || selectedChild === undefined || selectedChild === '') {
+      return
+    }
+    if (localStorage) {
+      console.log('Local storage updated with child id')
+      localStorage.setItem('candidateID', selectedChild)
+    } else {
+      console.log('Local storage not updated with child id')
+    }
+  })
   function openModal (num: number) {
     if (num && num !== 0) {
       setIndexNo(num)
@@ -71,6 +103,15 @@ function Home () {
   function getTestComponent () {
     setScreenNo(indexNo + 1)
     closeModal()
+  }
+
+  async function filterChildrenBasedOnInstitute () {
+    console.log('selected INs:', selectedInstitute)
+    const results = childrenData.filter(element => {
+      return element.institute === selectedInstitute
+    })
+    await setFilteredChildren(results)
+    await console.log('Filtered', filteredChildren)
   }
 
   return (
@@ -110,16 +151,19 @@ function Home () {
                       fillRule="nonzero"
                     />
                   </svg>
-                  <select className="w-full text-center border border-gray-300 rounded-full text-gray-600 h-10 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none appearance-none">
-                    <option>Select</option>
-                    <option>Red</option>
-                    <option>Blue</option>
-                    <option>Yellow</option>
-                    <option>Black</option>
-                    <option>Orange</option>
-                    <option>Purple</option>
-                    <option>Gray</option>
-                    <option>White</option>
+                  <select className="w-full text-center border border-gray-300 rounded-full text-gray-600 h-10 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none appearance-none" defaultValue={'DEFAULT'} onChange={(e) => {
+                    setSelectedInstitute(e.target.value)
+                  }} >
+                    <option value="DEFAULT" disabled>
+                                    Select ...
+                                  </option>
+                                  {institutes?.map((e: any, key: any) => {
+                                    return (
+                                      <option key={key} value={e.id}>
+                                        {e.name}
+                                      </option>
+                                    )
+                                  })}
                   </select>
                 </div>
               </div>
@@ -142,16 +186,19 @@ function Home () {
                       fillRule="nonzero"
                     />
                   </svg>
-                  <select className="w-full text-center border border-gray-300 rounded-full text-gray-600 h-10 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none appearance-none">
-                    <option>Select</option>
-                    <option>Red</option>
-                    <option>Blue</option>
-                    <option>Yellow</option>
-                    <option>Black</option>
-                    <option>Orange</option>
-                    <option>Purple</option>
-                    <option>Gray</option>
-                    <option>White</option>
+                  <select className="w-full text-center border border-gray-300 rounded-full text-gray-600 h-10 pl-5 pr-10 bg-white hover:border-gray-400 focus:outline-none appearance-none" defaultValue={'DEFAULT'} onChange={(e) => {
+                    setSelectedChild(e.target.value)
+                  }}>
+                    <option value="DEFAULT" disabled>
+                                    Select ...
+                                  </option>
+                                  {filteredChildren?.map((e: any, key: any) => {
+                                    return (
+                                      <option key={key} value={e.id}>
+                                        {e.firstName}
+                                      </option>
+                                    )
+                                  })}
                   </select>
                 </div>
               </div>

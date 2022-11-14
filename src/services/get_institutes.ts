@@ -8,7 +8,7 @@ export const getInstitutes = async () => {
     }
   }
   let institutes: any
-  await API.get('users/', headerConfig)
+  await API.get('institutes/', headerConfig)
     .then((response) => { institutes = response.data })
     .catch((err) => {
       console.log(err.message)
