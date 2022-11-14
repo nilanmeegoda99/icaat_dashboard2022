@@ -2,30 +2,23 @@ import React, { useEffect, useState } from 'react'
 import { IChildData } from '../../childtypes'
 import { IMentalChromScore } from '../../mentalChronScoreType'
 import { getmentalChronometryScrores } from '../../services/mental_chronometry_scores'
+import { getChild } from '../../services/get_child'
 import ChildData from '../child_data_component/child_data_component'
 
 function MentalChronoScreen () {
   const [mentalCromResults, setMentalCromResults] = useState([])
-  const [childId, setChildId] = React.useState('')
-  const candidateData = {
-    name: 'nilan',
-    institute: 'SLIIT',
-    age: 20,
-    guardian: 'nandana',
-    disorders: 'NA',
-    residence: 'Kurunegala'
-  }
+  const [candidateData, setCandidateData] = React.useState([])
+
   const getMentalCromResults = async () => {
-    await setMentalCromResults(await getmentalChronometryScrores(childId))
+    await setMentalCromResults(await getmentalChronometryScrores())
+  }
+
+  const getCandidateDate = async () => {
+    await setCandidateData(await getChild())
   }
   useEffect(() => {
-    const getchildId = async () => {
-      if (localStorage) {
-        await setChildId(localStorage.getItem('candidateID'))
-        getMentalCromResults()
-      }
-    }
-    getchildId()
+    getMentalCromResults()
+    getCandidateDate()
   }, [])
 
   return (
@@ -34,17 +27,17 @@ function MentalChronoScreen () {
       <h2 className="mb-4 text-2xl font-bold">
         Mental Chronometry Evaluation
       </h2>
-
+    {(candidateData.length > 0) && (
       <ChildData
-        name={candidateData.name}
-        institute={candidateData.institute}
-        age={candidateData.age}
-        guardian={candidateData.guardian}
-        disorders={candidateData.disorders}
-        residence={candidateData.residence}
+        name={candidateData[0].firstName}
+        institute={candidateData[0].institute}
+        age={candidateData[0].age}
+        guardian={candidateData[0].parent}
+        disorders={candidateData[0].disorders}
+        residence={candidateData[0].residence}
       />
-
-      <div className="mt-10 ">
+    )}
+      {mentalCromResults.length && (<div className="mt-10 ">
         <div className="overflow-y-auto p-4" style={{ height: '50vh' }}>
           <div >
             <div >
@@ -114,7 +107,8 @@ function MentalChronoScreen () {
             </div>
           </div>
         </div>
-      </div>
+      </div>) }
+
     </div>
   )
 }

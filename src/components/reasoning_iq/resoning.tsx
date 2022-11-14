@@ -3,18 +3,9 @@ import { IChildData } from '../../childtypes'
 import ChildData from '../child_data_component/child_data_component'
 
 function ReasoningIq () {
-  const candidateData: IChildData = {
-    name: 'nilan',
-    institute: 'SLIIT',
-    age: 20,
-    guardian: 'nandana',
-    disorders: 'NA',
-    residence: 'Kurunegala'
-  }
   return (
     <div className="flex flex-col">
       <h2 className="mb-4 text-2xl font-bold"> Reasoning IQ Evluation</h2>
-      <ChildData name={candidateData.name} institute={candidateData.institute} age={candidateData.age} guardian={candidateData.guardian} disorders={candidateData.disorders} residence={candidateData.residence} />
       <div className="mt-10 ">
           <div className="overflow-y-auto p-4" style={{ height: '50vh' }}>
             <div className="mt-10 relative bg-white p-4 rounded-3xl w-full my-4 shadow-xl">

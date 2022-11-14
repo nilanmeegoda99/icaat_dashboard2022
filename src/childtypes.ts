@@ -1,8 +1,8 @@
 export interface IChildData {
-  name: string
+  firstName: string
   institute: string
   age: number
-  guardian: string
+  parent: string
   disorders: string
   residence: string
 }

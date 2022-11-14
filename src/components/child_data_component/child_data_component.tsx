@@ -16,7 +16,7 @@ function ChildData (props: IChildData) {
 
       <div className="ml-4">
         <h2 className="font-semibold">Child Name</h2>
-        <p className="mt-2 text-sm text-gray-500">{props.name}</p>
+        <p className="mt-2 text-sm text-gray-500">{props.firstName}</p>
       </div>
     </div>
 
@@ -49,7 +49,7 @@ function ChildData (props: IChildData) {
 
       <div className="ml-4">
         <h2 className="font-semibold">Guardian </h2>
-        <p className="mt-2 text-sm text-gray-500">{props.guardian}</p>
+        <p className="mt-2 text-sm text-gray-500">{props.parent}</p>
       </div>
     </div>
     <div className="flex items-start rounded-xl bg-white p-4 shadow-lg">
