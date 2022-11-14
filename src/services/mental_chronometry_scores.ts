@@ -12,7 +12,6 @@ export const getmentalChronometryScrores = async () => {
   }
   let MentalChronometryScores: any
   let scores: any
-  // await API.get('mentalChronometryScores', headerConfig)
   await API.get('mentalChronometryScores/', headerConfig)
     .then((response) => {
       MentalChronometryScores = response.data

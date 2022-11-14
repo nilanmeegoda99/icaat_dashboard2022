@@ -1,6 +1,6 @@
 import API from './api'
 
-export const getKnowledgeIQScores = async () => {
+export const getReasoningIQScores = async () => {
   console.log('Child id is', localStorage.getItem('candidateID'))
   const childId = localStorage.getItem('candidateID')
   const headerConfig = {
@@ -10,16 +10,16 @@ export const getKnowledgeIQScores = async () => {
       'Access-Control-Allow-Methods': 'DELETE, POST, GET, OPTIONS'
     }
   }
-  let knowledgeIQScores: any
+  let resoningIQSocres: any
   let scores: any
-  await API.get('knowledgeIQScores/', headerConfig)
+  await API.get('resoningIQSocres/', headerConfig)
     .then((response) => {
-      knowledgeIQScores = response.data
-      scores = knowledgeIQScores.filter((obj: { candidateID: string }) => {
+      resoningIQSocres = response.data
+      scores = resoningIQSocres.filter((obj: { candidateID: string }) => {
         return obj.candidateID === childId
       })
-      console.log('Knowledge IQ scores', knowledgeIQScores)
-      console.log('Knowledge IQ scores2', scores)
+      console.log('Reasoning IQ scores', resoningIQSocres)
+      console.log('Reasoning IQ scores2', scores)
     })
     .catch((err) => {
       console.log(err.message)
