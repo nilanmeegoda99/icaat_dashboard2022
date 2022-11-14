@@ -6,7 +6,7 @@ import ChildData from '../child_data_component/child_data_component'
 
 function MentalChronoScreen () {
   const [mentalCromResults, setMentalCromResults] = useState([])
-  const [childId, setChildId] = useState('634319a1ed7ef7561a7e3897')
+  const [childId, setChildId] = React.useState('')
   const candidateData = {
     name: 'nilan',
     institute: 'SLIIT',
@@ -15,14 +15,19 @@ function MentalChronoScreen () {
     disorders: 'NA',
     residence: 'Kurunegala'
   }
-  useEffect(() => {
-    // eslint-disable-next-line @typescript-eslint/no-use-before-define
-    getMentalCromResults()
-  }, [])
-
   const getMentalCromResults = async () => {
     await setMentalCromResults(await getmentalChronometryScrores(childId))
   }
+  useEffect(() => {
+    const getchildId = async () => {
+      if (localStorage) {
+        await setChildId(localStorage.getItem('candidateID'))
+        getMentalCromResults()
+      }
+    }
+    getchildId()
+  }, [])
+
   return (
     // eslint-disable-next-line react/jsx-filename-extension
     <div className="flex flex-col">

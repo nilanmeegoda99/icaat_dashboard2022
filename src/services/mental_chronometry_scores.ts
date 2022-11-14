@@ -1,6 +1,8 @@
 import API from './api'
 
-export const getmentalChronometryScrores = async (childId: string) => {
+export const getmentalChronometryScrores = async () => {
+  console.log('Child id is', localStorage.getItem('candidateID'))
+  const childId = localStorage.getItem('candidateID')
   const headerConfig = {
     headers: {
       'Access-Control-Allow-Origin': '*',
@@ -17,6 +19,7 @@ export const getmentalChronometryScrores = async (childId: string) => {
       scores = MentalChronometryScores.filter((obj: { candidateID: string }) => {
         return obj.candidateID === childId
       })
+      console.log('Mental chron scores', scores)
     })
     .catch((err) => {
       console.log(err.message)
