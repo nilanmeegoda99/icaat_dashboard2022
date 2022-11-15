@@ -7,7 +7,7 @@ import 'react-circular-progressbar/dist/styles.css'
 import FaceOutlinedIcon from '@mui/icons-material/FaceOutlined'
 import LocalHospitalOutlinedIcon from '@mui/icons-material/LocalHospitalOutlined'
 
-function Dashboard() {
+function Dashboard () {
   const percentage = 66
   const percentage2 = 80
   const percentage3 = 25
