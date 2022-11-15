@@ -99,6 +99,7 @@ function MentalChronoScreen () {
                 <div className="text-base text-blue-400 font-semibold text-end">
                   {item.activityName !== 'Pair Cancerlation' && <p>{item.score / 4 * 100}</p>}
                   {item.activityName === 'Pair Cancerlation' && <p>{item.score / 3 * 100}</p>}
+                  { <p>Total Time : {item.totalTime.minutes} :{item.totalTime.seconds} </p>}
                 </div>
                 </div>
                 </div>

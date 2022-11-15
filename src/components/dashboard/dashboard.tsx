@@ -31,37 +31,37 @@ function Dashboard () {
         </section>
       </div>
       <section className="flex items-center justify-around bg-white w-full">
-      <div className="grid grid-cols-3 gap-20 m-6 content-center">
-        <div style={{ width: 180, height: 180 }}>
-          <CircularProgressbarWithChildren value={percentage}>
-            <FaceOutlinedIcon />
-            <div style={{ fontSize: 12, marginTop: -1 }}>
-              <strong>{percentage}%</strong> Tested children
-            </div>
-          </CircularProgressbarWithChildren>
+        <div className="grid grid-cols-3 gap-20 m-6 content-center">
+          <div style={{ width: 180, height: 180 }}>
+            <CircularProgressbarWithChildren value={percentage}>
+              <FaceOutlinedIcon />
+              <div style={{ fontSize: 12, marginTop: -1 }}>
+                <strong>{percentage}%</strong> Tested children
+              </div>
+            </CircularProgressbarWithChildren>
+          </div>
+          <div style={{ width: 180, height: 180 }}>
+            <CircularProgressbarWithChildren value={percentage2}>
+              <FaceOutlinedIcon />
+              <div style={{ fontSize: 12, marginTop: -1 }}>
+                <strong>{percentage2}%</strong> TBT children
+              </div>
+            </CircularProgressbarWithChildren>
+          </div>
+          <div style={{ width: 180, height: 180 }}>
+            <CircularProgressbarWithChildren value={percentage3}>
+              <LocalHospitalOutlinedIcon />
+              <div style={{ fontSize: 12, marginTop: -1 }}>
+                <strong>{percentage3} </strong> Institutes
+              </div>
+            </CircularProgressbarWithChildren>
+          </div>
         </div>
-        <div style={{ width: 180, height: 180 }}>
-          <CircularProgressbarWithChildren value={percentage2}>
-            <FaceOutlinedIcon />
-            <div style={{ fontSize: 12, marginTop: -1 }}>
-              <strong>{percentage2}%</strong> TBT children
-            </div>
-          </CircularProgressbarWithChildren>
-        </div>
-        <div style={{ width: 180, height: 180 }}>
-          <CircularProgressbarWithChildren value={percentage3}>
-            <LocalHospitalOutlinedIcon />
-            <div style={{ fontSize: 12, marginTop: -1 }}>
-              <strong>{percentage3} </strong> Institutes
-            </div>
-          </CircularProgressbarWithChildren>
-        </div>
-      </div>
       </section>
       <div className="grid grid-cols-2 gap-5 m-6">
         <div className="relative shadow-sm sm:rounded-lg">
           <p className="mb-3 p-2 font-serif text-md">Child Information</p>
-            <div className='overflow-y-auto h-80'>
+          <div className='overflow-y-auto h-80'>
             <table className="w-full text-sm text-left">
               <thead className="justify-between text-sm">
                 <tr className="bg-dark-purple">
@@ -179,11 +179,11 @@ function Dashboard () {
                 </tr>
               </tbody>
             </table>
-            </div>
+          </div>
         </div>
         <div className="relative shadow-sm sm:rounded-lg">
           <p className="mb-3 p-2 font-serif text-md">Institute Information</p>
-            <div className='overflow-y-auto h-80'>
+          <div className='overflow-y-auto h-80'>
             <table className="table-auto w-full text-sm text-left">
               <thead className="justify-between text-sm">
                 <tr className="bg-dark-purple">
@@ -207,7 +207,41 @@ function Dashboard () {
                 <tr className="bg-white border-4 border-gray-200 hover:bg-gray-100">
                   <td>
                     <span className="text-center ml-2 font-semibold">
-                      Hospital 01
+                      MOH Kurunegala
+                    </span>
+                  </td>
+                  <td className="py-4 px-6">
+                    <span>Adress Health Center, Puwakgashandiya, Kurunegala</span>
+                  </td>
+                  <td className="py-4 px-6">
+                    <span>Mr. A.K.Jayawardana</span>
+                  </td>
+
+                  <td className="py-4 px-6">
+                    <span>0372221099</span>
+                  </td>
+                </tr>
+                <tr className="bg-white border-4 border-gray-200 hover:bg-gray-100">
+                  <td>
+                    <span className="text-center ml-2 font-semibold">
+                      LRH Colombo
+                    </span>
+                  </td>
+                  <td className="py-4 px-6">
+                    <span>Adress hhkjhfjksdf dsfs dfs f</span>
+                  </td>
+                  <td className="py-4 px-6">
+                    <span>Mrs.Renuka Jayawardana</span>
+                  </td>
+
+                  <td className="py-4 px-6">
+                    <span>0779001099</span>
+                  </td>
+                </tr>
+                <tr className="bg-white border-4 border-gray-200 hover:bg-gray-100">
+                  <td>
+                    <span className="text-center ml-2 font-semibold">
+                      Children Hospital Colombo
                     </span>
                   </td>
                   <td className="py-4 px-6">
@@ -241,41 +275,7 @@ function Dashboard () {
                 <tr className="bg-white border-4 border-gray-200 hover:bg-gray-100">
                   <td>
                     <span className="text-center ml-2 font-semibold">
-                      Hospital 02
-                    </span>
-                  </td>
-                  <td className="py-4 px-6">
-                    <span>Adress hhkjhfjksdf dsfs dfs f</span>
-                  </td>
-                  <td className="py-4 px-6">
-                    <span>Mrs.Renuka Jayawardana</span>
-                  </td>
-
-                  <td className="py-4 px-6">
-                    <span>0779001099</span>
-                  </td>
-                </tr>
-                <tr className="bg-white border-4 border-gray-200 hover:bg-gray-100">
-                  <td>
-                    <span className="text-center ml-2 font-semibold">
-                      Hospital 02
-                    </span>
-                  </td>
-                  <td className="py-4 px-6">
-                    <span>Adress hhkjhfjksdf dsfs dfs f</span>
-                  </td>
-                  <td className="py-4 px-6">
-                    <span>Mrs.Renuka Jayawardana</span>
-                  </td>
-
-                  <td className="py-4 px-6">
-                    <span>0779001099</span>
-                  </td>
-                </tr>
-                <tr className="bg-white border-4 border-gray-200 hover:bg-gray-100">
-                  <td>
-                    <span className="text-center ml-2 font-semibold">
-                      Hospital 03
+                      Ayurveda Children Hospital
                     </span>
                   </td>
                   <td className="py-4 px-6">
@@ -291,7 +291,7 @@ function Dashboard () {
                 </tr>
               </tbody>
             </table>
-            </div>
+          </div>
 
         </div>
       </div>
