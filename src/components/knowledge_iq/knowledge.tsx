@@ -89,14 +89,14 @@ function KnowledgeScreen () {
                       })}
                       <div className="border-t-2"></div>
                       <div className="flex justify-end">
-                        <div className="my-2">
+                        {/* <div className="my-2">
                             <p className="font-semibold text-base mb-2">
                               Overall Progress
                             </p>
                             <div className="text-base text-blue-400 font-semibold text-end">
-                              <p>34%</p>
+                              <p>{}</p>
                           </div>
-                        </div>
+                        </div> */}
                       </div>
                     </div>
                   )}
@@ -128,14 +128,14 @@ function KnowledgeScreen () {
                       })}
                       <div className="border-t-2"></div>
                       <div className="flex justify-end">
-                        <div className="my-2">
+                        {/* <div className="my-2">
                             <p className="font-semibold text-base mb-2">
                               Overall Progress
                             </p>
                             <div className="text-base text-blue-400 font-semibold text-end">
                               <p>34%</p>
                           </div>
-                        </div>
+                        </div> */}
                       </div>
                     </div>
                   )}
